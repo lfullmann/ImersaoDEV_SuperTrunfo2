@@ -188,12 +188,18 @@ function jogar() {
     htmlResultado = '<p class="resultado-final">Empatou</p>';
   }
 
+  if (cartas.length == 0) {
+    alert("Fim de jogo");
+  } else {
+    document.getElementById("btnProximaRodada").disabled = false;
+  }
+
   divResultado.innerHTML = htmlResultado;
   document.getElementById("btnJogar").disabled = true;
-  document.getElementById("btnProximaRodada").disabled = false;
 
   atualizaPlacar();
   exibeCartaMaquina();
+  atualizaQuantidadeDeCartas();
 }
 
 function exibeCartaMaquina() {
