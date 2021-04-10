@@ -102,6 +102,7 @@ var cartas = [
 
 var pontosJogador = 0;
 var pontosMaquina = 0;
+
 atualizaPlacar();
 atualizaQuantidadeDeCartas();
 
@@ -120,15 +121,13 @@ function atualizaPlacar() {
 }
 
 function sortearCarta() {
-  var numeroCartaMaquina = parseInt(Math.random() * 3);
+  var numeroCartaMaquina = parseInt(Math.random() * cartas.length);
   cartaMaquina = cartas[numeroCartaMaquina];
+  cartas.splice(numeroCartaMaquina, 1);
 
-  var numeroCartaJogador = parseInt(Math.random() * 3);
-  while (numeroCartaJogador == numeroCartaMaquina) {
-    numeroCartaJogador = parseInt(Math.random() * 3);
-  }
+  var numeroCartaJogador = parseInt(Math.random() * cartas.length);
   cartaJogador = cartas[numeroCartaJogador];
-  console.log(cartaJogador);
+  cartas.splice(numeroCartaJogador, 1);
 
   document.getElementById("btnSortear").disabled = true;
   document.getElementById("btnJogar").disabled = false;
