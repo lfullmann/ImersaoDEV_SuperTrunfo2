@@ -103,6 +103,14 @@ var cartas = [
 var pontosJogador = 0;
 var pontosMaquina = 0;
 atualizaPlacar();
+atualizaQuantidadeDeCartas();
+
+function atualizaQuantidadeDeCartas() {
+  var divQuantidadeCartas = document.getElementById("quantidade-cartas");
+  var html = "Quantidade de cartas no jogo: " + cartas.length;
+
+  divQuantidadeCartas.innerHTML = html;
+}
 
 function atualizaPlacar() {
   var divPlacar = document.getElementById("placar");
