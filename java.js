@@ -190,6 +190,13 @@ function jogar() {
 
   if (cartas.length == 0) {
     alert("Fim de jogo");
+    if (pontosJogador > pontosMaquina) {
+      htmlResultado = '<p class="resultado-final">Venceu</p>';
+    } else if (pontosMaquina > pontosJogador) {
+      htmlResultado = '<p class="resultado-final">Perdeu</p>';
+    } else {
+      htmlResultado = '<p class="resultado-final">Empatou</p>';
+    }
   } else {
     document.getElementById("btnProximaRodada").disabled = false;
   }
