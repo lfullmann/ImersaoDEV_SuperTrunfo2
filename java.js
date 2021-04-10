@@ -106,7 +106,7 @@ atualizaPlacar();
 
 function atualizaPlacar() {
   var divPlacar = document.getElementById("placar");
-  var html = "Jogador" + pontosJogador + " x " + pontosMaquina + "Máquina";
+  var html = "Jogador " + pontosJogador + " x " + pontosMaquina + " Máquina";
 
   divPlacar.innerHTML = html;
 }
@@ -170,16 +170,22 @@ function jogar() {
     cartaMaquina.atributos[atributoSelecionado]
   ) {
     htmlResultado = '<p class="resultado-final">Venceu</p>';
+    pontosJogador++;
   } else if (
     cartaJogador.atributos[atributoSelecionado] <
     cartaMaquina.atributos[atributoSelecionado]
   ) {
     htmlResultado = '<p class="resultado-final">Perdeu</p>';
+    pontosMaquina++;
   } else {
     htmlResultado = '<p class="resultado-final">Empatou</p>';
   }
 
   divResultado.innerHTML = htmlResultado;
+  document.getElementById("btnJogar").disabled = true;
+  document.getElementById("btnProximaRodada").disabled = false;
+
+  atualizaPlacar();
   exibeCartaMaquina();
 }
 
