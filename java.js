@@ -100,6 +100,17 @@ var cartas = [
 ];
 //            0           1           2          3         4            5            6           7
 
+var pontosJogador = 0;
+var pontosMaquina = 0;
+atualizaPlacar();
+
+function atualizaPlacar() {
+  var divPlacar = document.getElementById("placar");
+  var html = "Jogador" + pontosJogador + " x " + pontosMaquina + "Máquina";
+
+  divPlacar.innerHTML = html;
+}
+
 function sortearCarta() {
   var numeroCartaMaquina = parseInt(Math.random() * 3);
   cartaMaquina = cartas[numeroCartaMaquina];
